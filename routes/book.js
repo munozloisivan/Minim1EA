@@ -43,6 +43,14 @@ router.get('/filter/quatrimestre/:price', function (req, res, next) {
   });
 });
 
+/* GET SUBJECTS ORDERED BY NAME */
+router.get('/filter/sort', function(req, res, next) {
+  Book.find({}, null, {sort: {title: 1 }}, function (err, result) {
+    if (err) return next(err);
+    res.json(result);
+  });
+});
+
 
 /* SAVE BOOK */
 router.post('/', function(req, res, next) {

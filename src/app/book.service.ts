@@ -55,6 +55,18 @@ export class BookService {
     });
   }
 
+  getSubjectsOrderedByName() {
+    return new Promise((resolve, reject) => {
+      this.http.get('/book/filter/sort')
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
   showBook(id) {
     return new Promise((resolve, reject) => {
       this.http.get('/book/' + id)

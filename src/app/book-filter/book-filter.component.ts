@@ -42,6 +42,14 @@ export class BookFilterComponent implements OnInit {
     })
   }
 
+  getSubjectsOrderedByName(){
+    this.bookService.getSubjectsOrderedByName().then((res) => {
+      this.books = res;
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
   getBookList() {
     this.bookService.getAllBooks().then((res) => {
       this.books = res;

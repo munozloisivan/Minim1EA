@@ -4,6 +4,7 @@
   <table>
     <tbody>
     <tr>
+      <td><a class="btn btn-info btn-sm" (click)="getSubjectsOrderedByName()">Ordenar</a></td>
       <td><input placeholder="Nombre" type="text" class="form-control" [(ngModel)]="nombre_filtrado" name="nombre" id="nombre" required></td>
       <a class="btn btn-info btn-sm" (click)="getSubjectByName(nombre_filtrado)">Filtrar</a>
       <td><input placeholder="Titulacion" type="text" class="form-control" [(ngModel)]="titulacion_filtrado" name="titulacion" id="titulacion" required></td>
