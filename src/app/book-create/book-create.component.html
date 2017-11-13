@@ -1,0 +1,61 @@
+<div class="container" xmlns:display="http://www.w3.org/1999/xhtml">
+<h1>Add New Student</h1>
+<div class="row">
+  <div class="col-md-6">
+    <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+     <!-- <div class="form-group">
+        <label for="name">ISBN</label>
+        <input type="text" class="form-control" [(ngModel)]="book.isbn" name="isbn" required>
+      </div> !-->
+      <div class="form-group">
+        <label for="name">Nombre Asignatura</label>
+        <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Estudiantes</label>
+        <input type="text" class="form-control" [(ngModel)]="idA"  name="author" required>
+      </div>
+      <div class="form-group">
+        <input type="hidden" class="form-control" [(ngModel)]="book.author" name="author" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Titulación</label>
+        <input type="text" class="form-control" [(ngModel)]="book.publisher" name="publisher" required>
+      </div>
+      <div class="form-group">
+       <label for="name">Quatrimestre</label>
+       <input type="number" class="form-control" [(ngModel)]="book.price" name="price" required>
+     </div>
+     <div class="form-group">
+       <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save</button>
+     </div>
+   </form>
+ </div>
+</div>
+</div>
+<div class="container">
+ <h1>Student List
+   <a [routerLink]="['/author-create']" class="btn btn-default btn-lg">
+     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+   </a>
+ </h1>
+ <h4>Selecciona el estudiante a añadir a la asignatura o añade uno</h4>
+ <table class="table table-striped">
+   <thead>
+   <tr>
+     <th>Name</th>
+     <th>Surname</th>
+     <th>Location</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr *ngFor="let author of authors">
+     <td>{{ author.name }}</td>
+     <td>{{ author.surnames }}</td>
+     <td>{{ author.nacionalidad }}</td>
+     <td><a class="btn btn-info" (click)=setAutor(author._id)>Seleccionar</a></td>
+   </tr>
+   </tbody>
+ </table>
+</div>
+

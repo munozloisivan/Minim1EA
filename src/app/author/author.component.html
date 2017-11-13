@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Students List
+    <a [routerLink]="['/author-create']" class="btn btn-primary btn-md">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </a>
+  </h1>
+  <table class="table table-striped table-responsive">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let author of authors">
+      <td>{{ author.name }}</td>
+      <td>{{ author.surnames }}</td>
+      <td>{{ author.nacionalidad }}</td>
+      <td><a [routerLink]="['/author-details', author._id]" class="btn btn-info">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"> Detalles</span>
+      </a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

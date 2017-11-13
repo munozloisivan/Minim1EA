@@ -1,0 +1,20 @@
+<div class="container">
+  <h1> Student details </h1>
+  <dl class="list">
+    <dt>Name</dt>
+    <dd>{{ author.name }}</dd>
+    <dt>Surnames</dt>
+    <dd>{{ author.surnames }}</dd>
+    <dt>Age</dt>
+    <dd>{{ author.age }}</dd>
+    <dt>Nationality</dt>
+    <dd>{{ author.nacionalidad }}</dd>
+  </dl>
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/author-edit', author._id]" class="btn btn-success">EDIT</a>
+      <button class="btn btn-danger" type="button" (click)="deleteAuthor(author._id)">DELETE</button>
+      <a [routerLink]="['/home']" class="btn btn-info">HOME</a>
+    </div>
+  </div>
+</div>
