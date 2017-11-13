@@ -20,6 +20,7 @@ import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { AuthorEditComponent } from './author-edit/author-edit.component';
 import { HomeComponent } from './home/home.component';
+import { BookFilterComponent } from './book-filter/book-filter.component';
 
 
 const appRoutes: Routes = [
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     AuthorCreateComponent,
     AuthorDetailComponent,
     AuthorEditComponent,
-    HomeComponent
+    HomeComponent,
+    BookFilterComponent
   ],
   imports: [
     BrowserModule,

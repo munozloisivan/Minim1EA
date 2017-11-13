@@ -19,6 +19,42 @@ export class BookService {
     });
   }
 
+  getSubjectsByName(name) {
+    return new Promise((resolve, reject) => {
+      this.http.get('/book/filter/title/' + name)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getSubjectsByTitulacion(titulacion) {
+    return new Promise((resolve, reject) => {
+      this.http.get('/book/filter/titulacion/' + titulacion)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getSubjectsByQuatrimestre(quatrimestre) {
+    return new Promise((resolve, reject) => {
+      this.http.get('/book/filter/quatrimestre/' + quatrimestre)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
   showBook(id) {
     return new Promise((resolve, reject) => {
       this.http.get('/book/' + id)

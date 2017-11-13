@@ -19,6 +19,31 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+/* GET SUBJECTS BY NAME */
+router.get('/filter/title/:title', function (req, res, next) {
+  Book.find({"title": req.params.title }).populate('author').exec(function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
+/* GET SUBJECTS BY TITULACIÓN */
+router.get('/filter/titulacion/:publisher', function (req, res, next) {
+  Book.find({"publisher": req.params.publisher }).populate('author').exec(function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
+/* GET SUBJECTS BY QUATRIMESTRE */
+router.get('/filter/quatrimestre/:price', function (req, res, next) {
+  Book.find({"price": req.params.price }).populate('author').exec(function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
+
 /* SAVE BOOK */
 router.post('/', function(req, res, next) {
   Book.create(req.body, function (err, post) {
